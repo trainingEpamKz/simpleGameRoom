@@ -3,8 +3,16 @@ package kz.gameRoom.gameRoom.controller;
 
 import kz.gameRoom.gameRoom.*;
 import kz.gameRoom.gameRoom.model.*;
+import kz.gameRoom.gameRoom.model.balls.Ball;
+import kz.gameRoom.gameRoom.model.blocks.Block;
+import kz.gameRoom.gameRoom.model.cars.Car;
+import kz.gameRoom.gameRoom.model.cars.LargeCar;
+import kz.gameRoom.gameRoom.model.cars.MediumCar;
+import kz.gameRoom.gameRoom.model.cars.SmallCar;
+import kz.gameRoom.gameRoom.model.dolls.Doll;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Controller {
@@ -14,9 +22,15 @@ public class Controller {
     private List<Toy> gameRoom;
     private ToysFabric toysFabric;
     private List<Toy> toys;
+    private List<Class<? extends Toy>> tClasses =
+            new ArrayList<Class<? extends Toy>>
+                    (Arrays.asList(Doll.class, SmallCar.class,
+                            MediumCar.class, LargeCar.class,
+                            Ball.class, Block.class));
 
     private boolean addToyToGameRoom(Toy toy) {
-        if (gameRoom.size() < maxToys && money + toy.getCost() <= maxMoneys) {
+        if (gameRoom.size() < maxToys && money
+                + toy.getCost() <= maxMoneys) {
             gameRoom.add(toy);
             return true;
         } else return false;
@@ -52,11 +66,12 @@ public class Controller {
     }
 
     public Controller(int maxToys, double maxMoneys) {
+        Price price = new Price(tClasses);
         this.maxToys = maxToys;
         this.maxMoneys = maxMoneys;
         this.gameRoom = new ArrayList<Toy>();
         this.toys = new ArrayList<Toy>();
-        this.toysFabric = new ToysFabric(Doll.class, Car.class);
+        this.toysFabric = new ToysFabric(tClasses);
     }
 
     public void fillGameRoom () {

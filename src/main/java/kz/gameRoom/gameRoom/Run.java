@@ -15,6 +15,6 @@ public class Run {
         System.out.println(ctrl.getOutput());
         ctrl.sortByCost();
         System.out.println(ctrl.getOutput());
-        System.out.println(ctrl.findByCost(10, 10));
+        System.out.println(ctrl.findByCost(6, 12));
     }
 }

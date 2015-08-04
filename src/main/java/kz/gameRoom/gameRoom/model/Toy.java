@@ -1,12 +1,14 @@
 package kz.gameRoom.gameRoom.model;
 
 
+import kz.gameRoom.gameRoom.Price;
+
 public abstract class Toy {
     private double cost;
     private String name;
 
-    public Toy (double cost, String name) {
-        this.cost = cost;
+    public Toy (String name) {
+        this.cost = Price.getPrice(this.getClass());
         this.name = name;
     }
 

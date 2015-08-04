@@ -1,0 +1,6 @@
+Doll=14
+SmallCar=6
+MediumCar=11
+LargeCar=13
+Ball=18
+Block=21
