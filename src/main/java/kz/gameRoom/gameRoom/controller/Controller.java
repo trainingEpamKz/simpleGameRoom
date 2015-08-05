@@ -5,10 +5,7 @@ import kz.gameRoom.gameRoom.*;
 import kz.gameRoom.gameRoom.model.*;
 import kz.gameRoom.gameRoom.model.balls.Ball;
 import kz.gameRoom.gameRoom.model.blocks.Block;
-import kz.gameRoom.gameRoom.model.cars.Car;
-import kz.gameRoom.gameRoom.model.cars.LargeCar;
-import kz.gameRoom.gameRoom.model.cars.MediumCar;
-import kz.gameRoom.gameRoom.model.cars.SmallCar;
+import kz.gameRoom.gameRoom.model.cars.*;
 import kz.gameRoom.gameRoom.model.dolls.Doll;
 
 import java.util.ArrayList;

@@ -1,6 +1,5 @@
 package kz.gameRoom.gameRoom;
 
-
 import kz.gameRoom.gameRoom.model.Toy;
 
 import java.util.List;
@@ -15,6 +14,10 @@ public class ToysFabric {
     }
 
     public Toy getRandomToy() {
+        return genRandomToy();
+    }
+
+    private Toy genRandomToy() {
         try {
             return tClasses.get(rand.nextInt(tClasses.size())).newInstance();
         } catch (InstantiationException e) {
